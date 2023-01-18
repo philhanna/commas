@@ -4,6 +4,9 @@ import "fmt"
 
 func Format(d int) string {
 	s := fmt.Sprint(d)
+	if d < 0 {
+		return s
+	}
 	sb := ""
 	m := 0
 	for {
