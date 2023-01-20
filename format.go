@@ -2,20 +2,13 @@ package commas
 
 import "fmt"
 
-// Format returns the comma-separated value of an int
-func Format(d int) string {
-	s := fmt.Sprint(d)
-	return format(s)
+type Number interface {
+	int | int64 | float64
 }
 
-// Format64 returns the comma-separated value of an int64
-func Format64(d int64) string {
-	s := fmt.Sprint(d)
-	return format(s)
-}
-
-// format is an internal function used by Format and Format64
-func format(s string) string {
+// Format return the comma-separated value of a int or int64
+func Format[V Number](n V) string {
+	s := fmt.Sprint(n)
 	sb := ""
 	m := 0
 	for {

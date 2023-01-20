@@ -11,7 +11,6 @@ var (
 	actual   string
 )
 
-// Tests for int32
 func Test123456(t *testing.T) {
 	n = 123456
 	expected = "123,456"
@@ -48,11 +47,10 @@ func TestNegative1000(t *testing.T) {
 	}
 }
 
-// Tests for int64
 func Test1234567890(t *testing.T) {
 	n64 = 1234567890
 	expected = "1,234,567,890"
-	actual = Format64(n64)
+	actual = Format(n64)
 	if expected != actual {
 		t.Error()
 	}
@@ -61,7 +59,7 @@ func Test1234567890(t *testing.T) {
 func Test064(t *testing.T) {
 	n64 = 0
 	expected = "0"
-	actual = Format64(n64)
+	actual = Format(n64)
 	if expected != actual {
 		t.Error()
 	}
