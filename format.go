@@ -3,7 +3,7 @@ package commas
 import "fmt"
 
 type Number interface {
-	int | int64
+	int | int64 | uint64
 }
 
 // Format return the comma-separated value of a int or int64
